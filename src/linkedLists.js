@@ -53,6 +53,19 @@ class LinkedLists {
     }
   }
 
+  tail() {
+    let temp = this.head;
+
+    if (temp === null) return undefined;
+    else {
+      while (temp.next) {
+        temp = temp.next;
+      }
+    }
+
+    return temp.value;
+  }
+
   toString() {
     let current = this.head;
     let result = "";
