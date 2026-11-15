@@ -4,7 +4,7 @@ const list = new LinkedLists();
 
 list.append("dog");
 list.append("cat");
-list.append("parrot");
+list.prepend("parrot");
 list.append("hamster");
 list.append("snake");
 list.append("turtle");
