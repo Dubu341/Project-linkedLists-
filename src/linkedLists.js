@@ -70,7 +70,7 @@ class LinkedLists {
     if (index > this.size()) return;
     let temp = this.head;
 
-    for (let i = 1; i < index; i++) {
+    for (let i = 0; i < index; i++) {
       temp = temp.next;
     }
 
@@ -94,8 +94,24 @@ class LinkedLists {
       if (temp.value === value) return true;
       temp = temp.next;
     }
-    
+
     return false;
+  }
+
+  findIndex(value) {
+    let index = 0;
+
+    let temp = this.head;
+
+    while (temp) {
+      if (temp.value === value) return index;
+
+      index++;
+
+      temp = temp.next;
+    }
+
+    return -1;
   }
 
   toString() {
