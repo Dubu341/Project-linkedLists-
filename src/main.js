@@ -15,7 +15,7 @@ console.log("First node: " + list.headValue());
 console.log("Node at index 3: " + list.at(3));
 
 console.log("Remove head : " + list.pop());
-list.insertAt(4, "hello");
+list.insertAt(4, "hello", "hi", "BIG HELLO IT WORKS");
 console.log("List: " + list.toString());
 console.log("List size: " + list.size());
 console.log("First node: " + list.headValue());

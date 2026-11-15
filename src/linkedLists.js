@@ -114,30 +114,32 @@ class LinkedLists {
     return -1;
   }
 
-  insertAt(index, value) {
+  insertAt(index, ...values) {
     if (index > this.size() || index < 0) throw new RangeError("Error");
+    let position = index;
+    values.forEach((value) => {
+      let newNode = new Node(value);
+      newNode.value = value;
 
-    let newNode = new Node(value);
-    newNode.value = value;
+      if (position === 0) {
+        newNode.next = this.head;
+        this.head = newNode;
+      } else {
+        let previous = null;
+        let current = this.head;
+        let currIndex = 0;
 
-    if (index === 0) {
-      newNode.next = this.head;
-      this.head = newNode;
-      return;
-    } else {
-      let previous = null;
-      let current = this.head;
-      let currIndex = 0;
+        while (currIndex < position) {
+          previous = current;
+          current = current.next;
+          currIndex++;
+        }
 
-      while (currIndex < index) {
-        previous = current;
-        current = current.next;
-        currIndex++;
+        newNode.next = current;
+        previous.next = newNode;
       }
-
-      newNode.next = current;
-      previous.next = newNode;
-    }
+      position++;
+    });
   }
 
   toString() {
