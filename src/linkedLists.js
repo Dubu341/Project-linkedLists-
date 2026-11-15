@@ -46,6 +46,13 @@ class LinkedLists {
     return size;
   }
 
+  headValue() {
+    if (this.head === null) return undefined;
+    else {
+      return this.head.value;
+    }
+  }
+
   toString() {
     let current = this.head;
     let result = "";
