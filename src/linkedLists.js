@@ -83,8 +83,19 @@ class LinkedLists {
     const first = this.head;
 
     this.head = this.head.next;
-    
+
     return first.value;
+  }
+
+  contains(value) {
+    let temp = this.head;
+
+    while (temp) {
+      if (temp.value === value) return true;
+      temp = temp.next;
+    }
+    
+    return false;
   }
 
   toString() {

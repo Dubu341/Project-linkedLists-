@@ -22,3 +22,5 @@ console.log("First node: " + list.headValue());
 console.log("Last node: " + list.tail());
 console.log("Node at 3: " + list.at(3));
 console.log("Node at 10: " + list.at(10));
+
+console.log("Contains snake: " + list.contains("snake"));
