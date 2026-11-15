@@ -36,11 +36,11 @@ class LinkedLists {
   size() {
     let size = 0;
 
-    let temp = this.head;
+    let current = this.head;
 
-    while (temp != null) {
+    while (current != null) {
       size += 1;
-      temp = temp.next;
+      current = current.next;
     }
 
     return size;
@@ -54,27 +54,27 @@ class LinkedLists {
   }
 
   tail() {
-    let temp = this.head;
+    let current = this.head;
 
-    if (temp === null) return;
+    if (current === null) return;
     else {
-      while (temp.next) {
-        temp = temp.next;
+      while (current.next) {
+        current = current.next;
       }
     }
 
-    return temp.value;
+    return current.value;
   }
 
   at(index) {
     if (index > this.size()) return;
-    let temp = this.head;
+    let current = this.head;
 
     for (let i = 0; i < index; i++) {
-      temp = temp.next;
+      current = current.next;
     }
 
-    return temp.value;
+    return current.value;
   }
 
   pop() {
@@ -88,11 +88,11 @@ class LinkedLists {
   }
 
   contains(value) {
-    let temp = this.head;
+    let current = this.head;
 
-    while (temp) {
-      if (temp.value === value) return true;
-      temp = temp.next;
+    while (current) {
+      if (current.value === value) return true;
+      current = current.next;
     }
 
     return false;
@@ -101,14 +101,14 @@ class LinkedLists {
   findIndex(value) {
     let index = 0;
 
-    let temp = this.head;
+    let current = this.head;
 
-    while (temp) {
-      if (temp.value === value) return index;
+    while (current) {
+      if (current.value === value) return index;
 
       index++;
 
-      temp = temp.next;
+      current = current.next;
     }
 
     return -1;
