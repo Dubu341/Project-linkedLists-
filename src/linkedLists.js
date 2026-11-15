@@ -22,6 +22,7 @@ class LinkedLists {
     }
     current.next = newNode;
   }
+
   prepend(value) {
     let newNode = new Node(value);
 
@@ -30,6 +31,19 @@ class LinkedLists {
     newNode.next = this.head;
 
     this.head = newNode;
+  }
+
+  size() {
+    let size = 0;
+
+    let temp = this.head;
+
+    while (temp != null) {
+      size += 1;
+      temp = temp.next;
+    }
+
+    return size;
   }
 
   toString() {
