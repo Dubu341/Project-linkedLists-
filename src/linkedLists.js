@@ -142,6 +142,22 @@ class LinkedLists {
     });
   }
 
+  removeAt(index) {
+    if (index >= this.size() || index < 0) throw new RangeError("Error");
+
+    let current = this.head;
+
+    if (index === 0) {
+      this.head = this.head.next;
+    } else {
+      for (let i = 0; i < index - 1; i++) {
+        current = current.next;
+      }
+
+      current.next = current.next.next;
+    }
+  }
+
   toString() {
     let current = this.head;
     let result = "";
