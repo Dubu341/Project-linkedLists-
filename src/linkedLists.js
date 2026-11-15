@@ -114,6 +114,32 @@ class LinkedLists {
     return -1;
   }
 
+  insertAt(index, value) {
+    if (index > this.size() || index < 0) throw new RangeError("Error");
+
+    let newNode = new Node(value);
+    newNode.value = value;
+
+    if (index === 0) {
+      newNode.next = this.head;
+      this.head = newNode;
+      return;
+    } else {
+      let previous = null;
+      let current = this.head;
+      let currIndex = 0;
+
+      while (currIndex < index) {
+        previous = current;
+        current = current.next;
+        currIndex++;
+      }
+
+      newNode.next = current;
+      previous.next = newNode;
+    }
+  }
+
   toString() {
     let current = this.head;
     let result = "";
