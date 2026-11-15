@@ -77,6 +77,16 @@ class LinkedLists {
     return temp.value;
   }
 
+  pop() {
+    if (this.head === null) return;
+
+    const first = this.head;
+
+    this.head = this.head.next;
+    
+    return first.value;
+  }
+
   toString() {
     let current = this.head;
     let result = "";

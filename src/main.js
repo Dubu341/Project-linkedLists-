@@ -9,9 +9,16 @@ list.append("hamster");
 list.append("snake");
 list.append("turtle");
 
-console.log(list.toString());
-console.log(list.size());
-console.log(list.headValue());
-console.log(list.tail());
-console.log(list.at(3));
-console.log(list.at(10));
+console.log("List: " + list.toString());
+console.log("List size: " + list.size());
+console.log("First node: " + list.headValue());
+console.log("Node at 3: " + list.at(3));
+
+console.log("removed: " + list.pop());
+
+console.log("List: " + list.toString());
+console.log("List size: " + list.size());
+console.log("First node: " + list.headValue());
+console.log("Last node: " + list.tail());
+console.log("Node at 3: " + list.at(3));
+console.log("Node at 10: " + list.at(10));
