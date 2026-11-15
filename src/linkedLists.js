@@ -47,7 +47,7 @@ class LinkedLists {
   }
 
   headValue() {
-    if (this.head === null) return undefined;
+    if (this.head === null) return;
     else {
       return this.head.value;
     }
@@ -56,11 +56,22 @@ class LinkedLists {
   tail() {
     let temp = this.head;
 
-    if (temp === null) return undefined;
+    if (temp === null) return;
     else {
       while (temp.next) {
         temp = temp.next;
       }
+    }
+
+    return temp.value;
+  }
+
+  at(index) {
+    if (index > this.size()) return;
+    let temp = this.head;
+
+    for (let i = 1; i < index; i++) {
+      temp = temp.next;
     }
 
     return temp.value;

@@ -13,3 +13,5 @@ console.log(list.toString());
 console.log(list.size());
 console.log(list.headValue());
 console.log(list.tail());
+console.log(list.at(3));
+console.log(list.at(10));
